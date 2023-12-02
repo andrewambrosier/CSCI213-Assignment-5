@@ -7,15 +7,16 @@
             SongPrice = price;
         }
 
-        private int SongID { get; set; }
-        private string SongName { get; set;
-        private int PerformerID { get; set;}
-        private decimal SongPrice { get; set;}
+        public int SongID { get; set; }
+        public string SongName { get; set; }
+        public int PerformerID { get; set;}
+        public decimal SongPrice { get; set;}
 
         /*public static List<Song> GetSongsByPerformer(int performerID) {
             //database
         }*/
 
         public override string ToString() => $"{SongName} (ID: {SongID}, Performer ID: {PerformerID}, Price: {SongPrice:C})";
+
     }
 }
