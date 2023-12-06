@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using CSCI213___Assignment_5.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<CSCI213___Assignment_5Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CSCI213___Assignment_5Context") ?? throw new InvalidOperationException("Connection string 'CSCI213___Assignment_5Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

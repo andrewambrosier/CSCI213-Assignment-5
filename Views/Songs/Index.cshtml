@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CSCI213___Assignment_5.Song>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerformerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SongPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerformerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SongID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SongID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SongID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
