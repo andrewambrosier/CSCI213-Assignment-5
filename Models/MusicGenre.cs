@@ -1,6 +1,6 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 
-namespace CSCI213___Assignment_5 {
+namespace CSCI213___Assignment_5.Models {
     public class MusicGenre {
         public MusicGenre(int id, string name) {
             GenreID = id;

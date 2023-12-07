@@ -1,4 +1,4 @@
-﻿namespace CSCI213___Assignment_5 {
+﻿namespace CSCI213___Assignment_5.Models {
 
     public class Cart {
         public Cart(int id, int userID) {

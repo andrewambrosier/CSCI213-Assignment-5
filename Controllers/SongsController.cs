@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CSCI213___Assignment_5;
 using CSCI213___Assignment_5.Data;
+using CSCI213___Assignment_5.Models;
 
 namespace CSCI213___Assignment_5.Controllers
 {

@@ -1,4 +1,4 @@
-﻿namespace CSCI213___Assignment_5 {
+﻿namespace CSCI213___Assignment_5.Models {
     public class Performer {
 
         public Performer(int id, string name, int genreID) {

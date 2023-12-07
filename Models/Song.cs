@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
     
-namespace CSCI213___Assignment_5 {
+namespace CSCI213___Assignment_5.Models {
     public class Song {
-       //// public Song(int id, string name, int performerID, decimal price) {
-       //    // SongID = id;
-       //     SongName = name;
-       //     PerformerID = performerID;
-       //     SongPrice = price;
-       // //
+         public Song(int id, string name, int performerID, decimal price) {
+             SongID = id;
+             SongName = name;
+             PerformerID = performerID;
+             SongPrice = price;
+         }
 
         public int SongID { get; set; }
         public string SongName { get; set; }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration.UserSecrets;
 
-namespace CSCI213___Assignment_5 {
+namespace CSCI213___Assignment_5.Models {
     public class User {
         public User(int id, string name, string email, string password) {
             UserID = id;

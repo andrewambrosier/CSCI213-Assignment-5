@@ -1,4 +1,4 @@
-﻿namespace CSCI213___Assignment_5 {
+﻿namespace CSCI213___Assignment_5.Models {
     public class Payment {
         public Payment(int id, int orderID, decimal total) {
             PaymentID = id;

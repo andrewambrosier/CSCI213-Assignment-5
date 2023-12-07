@@ -1,4 +1,4 @@
-﻿namespace CSCI213___Assignment_5 {
+﻿namespace CSCI213___Assignment_5.Models {
     public class Order {
         public Order(int id, int userID, decimal total, DateTime date) {
             OrderID = id;

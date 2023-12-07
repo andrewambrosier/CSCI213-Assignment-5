@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using CSCI213___Assignment_5;
+using CSCI213___Assignment_5.Models;
 
 namespace CSCI213___Assignment_5.Data
 {
@@ -14,8 +14,8 @@ namespace CSCI213___Assignment_5.Data
         {
         }
 
-        public DbSet<CSCI213___Assignment_5.Song> Song { get; set; } = default!;
+        public DbSet<Song> Song { get; set; } = default!;
 
-        public DbSet<CSCI213___Assignment_5.MusicGenre> MusicGenre { get; set; } = default!;
+        public DbSet<MusicGenre> MusicGenre { get; set; } = default!;
     }
 }
