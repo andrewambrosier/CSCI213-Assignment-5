@@ -28,8 +28,8 @@ namespace CSCI213___Assignment_5.Controllers {
             return RedirectToAction("Index"); //Replace view
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult Delete(Song song) { 
-        }
+        }*/
     }
 }
