@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Browse Music";
+}
+
+<h1>Browse Music</h1>
+
+<form id="musicForm">
+    <label for="genreSelect">Select Genre:</label>
+    <select id="genreSelect">
+        <option value="">Select a genre...</option>
+        @foreach (var genre in ViewData["Genres"] as List<string>)
+        {
+            <option value="@genre">@genre</option>
+        }
+    </select>
+    <br /><br />
+    <div id="songList"></div>
+    <button type="submit">Add to Shopping Cart</button>
+</form>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#musicForm').submit(function (event) {
+                event.preventDefault();
+                // Add songs to shopping cart logic
+                // This could involve AJAX to send selected songs to the server for cart handling
+                alert('Songs added to shopping cart!');
+            });
+
+            $('#genreSelect').change(function () {
+                var selectedGenre = $(this).val();
+                $.post("/Music/GetSongsByGenre", { selectedGenre: selectedGenre }, function (data) {
+                    $('#songList').html(data);
+                });
+            });
+        });
+    </script>
+}

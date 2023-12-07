@@ -13,6 +13,14 @@ namespace CSCI213___Assignment_5.Controllers {
         public IActionResult Index() {
             return View();
         }
+        public IActionResult BrowseMusic()
+        {
+            return View();  
+        }
+        public IActionResult Artists()
+        {
+            return View();
+        }
 
         public IActionResult Privacy() {
             return View();

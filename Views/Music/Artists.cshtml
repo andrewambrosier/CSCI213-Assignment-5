@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = ViewData["Genre"] + " Artists";
+}
+
+<style>
+    /* Define a background image and color */
+    body {
+        background-color: blanchedalmond; /* Fallback color if the image fails to load */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .custom-select {
+        background-color: white; /* Semi-transparent white background for the select */
+    }
+
+    /* Define styles for text and elements within the container */
+    .container {
+        color: black; /* Text color */
+    }
+
+    .lead {
+        font-size: 1.25rem; /* Larger font size for the lead paragraph */
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h1 class="text-center">@ViewData["Genre"] Artists</h1>
+
+            @if (ViewData["Artists"] != null && ((List<string>)ViewData["Artists"]).Count > 0)
+            {
+                <form id="artistForm">
+                    <div class="text-center">
+                        <label for="artistSelect">Select Artist:</label>
+                        <select class="custom-select" id="artistSelect">
+                            <option selected disabled>Select an artist...</option>
+                            @foreach (var artist in ViewData["Artists"] as List<string>)
+                            {
+                                <option value="@artist">@artist</option>
+                            }
+                        </select>
+                    </div>
+                    <br />
+                    <div id="artistDetails" class="text-center"></div>
+                </form>
+            }
+            else
+            {
+                <p class="text-center">No artists found for this genre.</p>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#artistSelect').change(function () {
+                var selectedArtist = $(this).val();
+                if (selectedArtist) {
+                    // Perform actions for the selected artist (display details, navigate, etc.)
+                    $('#artistDetails').html("<p>Selected Artist: " + selectedArtist + "</p>");
+                }
+            });
+        });
+    </script>
+}

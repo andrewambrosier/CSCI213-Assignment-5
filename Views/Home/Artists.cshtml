@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = ViewData["Genre"] + " Artists";
+}
+
+<h1>@ViewData["Genre"] Artists</h1>
+
+@if (ViewData["Artists"] != null && ((List<string>)ViewData["Artists"]).Count > 0)
+{
+    <ul>
+        @foreach (var artist in ViewData["Artists"] as List<string>)
+        {
+            <li>@artist</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No artists found for this genre.</p>
+}

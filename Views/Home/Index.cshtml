@@ -4,7 +4,7 @@
 
 <style>
     /* Define a background image and color */
-    body {        
+    body {
         background-color: blanchedalmond; /* Fallback color if the image fails to load */
         background-size: cover;
         background-repeat: no-repeat;
@@ -36,10 +36,23 @@
                     <option value="rock">Rock</option>
                     <option value="pop">Pop</option>
                     <option value="80s">80s</option>
-                    <option value="country">Country</option>                    
+                    <option value="country">Country</option>
                 </select>
             </div>
         </div>
     </div>
 </div>
 
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#genreSelect').change(function () {
+                var selectedGenre = $(this).val();
+                if (selectedGenre) {
+                    window.location.href = '/Music/Artists?genre=' + selectedGenre;
+                }
+            });
+        });
+    </script>
+}
